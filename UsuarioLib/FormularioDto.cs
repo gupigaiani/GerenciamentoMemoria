@@ -1,4 +1,1 @@
-public record FormularioDto(string Nome, string Cpf, string Cargo)
-{
-    public int Idade { get; set; }
-}
+public record struct FormularioDto(string Nome, string Cpf, string Cargo, int Idade);

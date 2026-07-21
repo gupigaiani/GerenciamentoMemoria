@@ -44,12 +44,41 @@ using UsuarioLib;
 
 // Console.WriteLine(dto == dto2);
 
-UsuarioDto dto1 = new UsuarioDto();
-dto1.Nome = "Gustavo";
-dto1.Email = "gustavo@email.com";
-dto1.Telefones = new List<string>();
+// UsuarioDto dto1 = new UsuarioDto();
+// dto1.Nome = "Gustavo";
+// dto1.Email = "gustavo@email.com";
+// dto1.Telefones = new List<string>();
 
-UsuarioDto dto2 = new UsuarioDto();
-dto2.Nome = "Daniel";
-dto2.Email = "daniel@email.com";
-dto2.Telefones = new List<string>();
+// UsuarioDto dto2 = new UsuarioDto();
+// dto2.Nome = "Daniel";
+// dto2.Email = "daniel@email.com";
+// dto2.Telefones = new List<string>();
+
+Stopwatch sw = new Stopwatch();
+
+sw.Start();
+
+for (int i = 0; i < 1000000000; i++)
+{
+    Coordenada coordenada = new Coordenada(123.456, -123.456);
+    var latitude = coordenada.Latitude;
+    var longitude = coordenada.Longitude;
+}
+
+sw.Stop();
+
+Console.WriteLine($"Tempo total em ms: {sw.Elapsed.TotalMilliseconds}");
+
+sw.Restart();
+
+for (int i = 0; i < 1000000000; i++)
+{
+    FormularioDto dto = new FormularioDto("Gustavo", "12345678900", "Desenvolvedor", 20);
+    var idade = dto.Idade;
+    var nome = dto.Nome;
+}
+
+sw.Stop();
+
+Console.WriteLine($"Tempo total em ms: {sw.Elapsed.TotalMilliseconds}");
+
